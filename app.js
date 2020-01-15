@@ -15,10 +15,9 @@ const reciever = () => {
     { type: 'input', name: 'expiryYear', message: 'Enter your card\'s expiry year:' },
     { type: 'input', name: 'cardPin', message: 'Enter your card pin:' },
   ]).then(answers => {
-    // console.log(`Hello ${answers.name}`);
     payment(answers.name, answers.email, answers.cardNo, answers.cvv, answers.expiryMonth, answers.expiryYear, answers.cardPin);
-  }).catch(() => {
-    console.log('shit');
+  }).catch((error) => {
+    console.log(error.message);
   })
 };
 
